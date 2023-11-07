@@ -64,8 +64,14 @@ public class UserInterface {
     }
 
     public void processGetByPriceRequest() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Minimum Price: ");
-        double minimumPrice = UserInterface.
+        double minPrice = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Maximum Price: ");
+        double maxPrice = scanner.nextDouble();
+        scanner.nextLine();
+        helperDisplayVehicles(dealership.getVehiclesByPrice(minPrice, maxPrice));
     }
 
     public void processGetByMakeModelRequest() {
@@ -73,19 +79,39 @@ public class UserInterface {
     }
 
     public void processGetByYearRequest() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Minimum year: ");
+        int minYear = scanner.nextInt();
+        scanner.nextLine();
+        System.out.println("Maximum year: ");
+        int maxYear = scanner.nextInt();
+        scanner.nextLine();
+        helperDisplayVehicles(dealership.getVehiclesByYear(minYear, maxYear));
     }
 
     public void processGetByColorRequest() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter color: ");
+        String color = scanner.nextLine();
+        helperDisplayVehicles(dealership.getVehiclesByColor(color));
     }
 
     public void processGetByMileageRequest() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Minimum Mileage: ");
+        double minMileage = scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("Maximum Mileage: ");
+        double maxMileage = scanner.nextDouble();
+        scanner.nextLine();
+        helperDisplayVehicles(dealership.getVehiclesByMileage(minMileage, maxMileage));
     }
 
     public void processGetByVehicleTypeRequest() {
-
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter Vehicle type: ");
+        String vehicleType = scanner.nextLine();
+        helperDisplayVehicles(dealership.getVehiclesByType(vehicleType));
     }
 
     public void processGetAllVehicleRequest() {

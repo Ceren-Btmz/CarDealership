@@ -63,23 +63,57 @@ public class Dealership {
     }
 
     public ArrayList<Vehicle> getVehiclesByMakeModel (String make, String model) {
-        return null;
+        ArrayList<Vehicle> listOfVehiclesByMakeModel = new ArrayList<Vehicle>();
+        for (Vehicle v : this.Inventory) {
+            if (v.getMake().equalsIgnoreCase(make) || v.getModel().equalsIgnoreCase(model)) {
+                listOfVehiclesByMakeModel.add(v);
+            }
+        }
+
+        return listOfVehiclesByMakeModel;
     }
 
-    public ArrayList<Vehicle> getVehiclesByYear(String min, String max) {
-        return null;
+    public ArrayList<Vehicle> getVehiclesByYear(int min, int max) {
+        ArrayList<Vehicle> listOfVehiclesByYear = new ArrayList<Vehicle>();
+        for (Vehicle v : this.Inventory) {
+            if (v.getYear() >= min && v.getYear() <= max) {
+                listOfVehiclesByYear.add(v);
+            }
+        }
+
+        return listOfVehiclesByYear;
     }
 
     public ArrayList<Vehicle> getVehiclesByColor(String color) {
-        return null;
+        ArrayList<Vehicle> listOfVehiclesByColor = new ArrayList<Vehicle>();
+        for (Vehicle v : this.Inventory) {
+            if (v.getColor().equalsIgnoreCase(color)) {
+                listOfVehiclesByColor.add(v);
+            }
+        }
+        return listOfVehiclesByColor;
     }
 
     public ArrayList<Vehicle> getVehiclesByMileage(double min, double max) {
-        return null;
+        ArrayList<Vehicle> listOfVehiclesByMileage = new ArrayList<Vehicle>();
+        for (Vehicle v : this.Inventory) {
+            if (v.getOdometer() >= min && v.getOdometer() <= max) {
+                listOfVehiclesByMileage.add(v);
+            }
+        }
+
+        return listOfVehiclesByMileage;
     }
 
     public ArrayList<Vehicle> getVehiclesByType(String vehicleType) {
-        return null;
+        ArrayList<Vehicle> listOfVehiclesByType = new ArrayList<Vehicle>();
+        for (Vehicle v : this.Inventory) {
+            if (v.getVehicleType().equalsIgnoreCase(vehicleType)) {
+                listOfVehiclesByType.add(v);
+            }
+        }
+
+        return listOfVehiclesByType;
     }
 
     public ArrayList<Vehicle> getAllVehicles() {
