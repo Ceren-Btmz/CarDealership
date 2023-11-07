@@ -1,13 +1,14 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Dealership {
     private String name;
     private String address;
     private String phone;
 
-    ArrayList<Vehicle>Inventory;
+    private ArrayList<Vehicle>Inventory;
 
     public Dealership(String name, String address, String phone) {
         this.name = name;
@@ -51,7 +52,14 @@ public class Dealership {
     }
 
     public ArrayList<Vehicle> getVehiclesByPrice(double min, double max) {
-        return null;
+        ArrayList<Vehicle> listOfVehiclesByPrice = new ArrayList<Vehicle>();
+        for (Vehicle v : this.Inventory) {
+            if (v.getPrice() >= min && v.getPrice() <= max) {
+                listOfVehiclesByPrice.add(v);
+            }
+        }
+
+        return listOfVehiclesByPrice;
     }
 
     public ArrayList<Vehicle> getVehiclesByMakeModel (String make, String model) {
