@@ -65,7 +65,7 @@ public class UserInterface {
 
     public void processGetByPriceRequest() {
         System.out.println("Minimum Price: ");
-        double minimumPrice =   
+        double minimumPrice = UserInterface.
     }
 
     public void processGetByMakeModelRequest() {
